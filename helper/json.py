@@ -25,7 +25,7 @@ def save_data_to_json(file_path, cars):
     except Exception as e:
         print(f'Error saving data to {file_path}:', e)
 
-def restart_data_from_json(file_path, cars):
+def reset_data_from_json(file_path, cars):
     cars = []
     print('Car data restarted and reloaded from file.')
     save_data_to_json(file_path, cars)

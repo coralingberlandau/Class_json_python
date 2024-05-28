@@ -3,7 +3,7 @@ This application manage a garage.
 """
 from enum import Enum
 from helper.helpers import add_car, delete_car, print_car_data, sum_cars, update_car, car_index
-from helper.json import load_data_from_json, restart_data_from_json, save_data_to_json
+from helper.json import load_data_from_json, reset_data_from_json, save_data_to_json
 
 cars = []
 
@@ -13,7 +13,7 @@ class Menu(Enum):
     DELETE = 3
     UPDATE = 4
     SUM = 5
-    RESTART = 6
+    RESET = 6
     EXIT = 7
     
 def display_menu():
@@ -32,8 +32,8 @@ if __name__ == '__main__':
             if user_select == Menu.DELETE: delete_car(cars)
             if user_select == Menu.UPDATE: update_car(cars)
             if user_select == Menu.SUM: sum_cars(cars)
-            if user_select == Menu.RESTART: 
-                restart_data_from_json('cars.json', cars)
+            if user_select == Menu.RESET: 
+                reset_data_from_json('cars.json', cars)
                 cars = load_data_from_json('cars.json', cars)
             if user_select == Menu.EXIT:
                 save_data_to_json('cars.json', cars)
